@@ -347,13 +347,15 @@ namespace MicroprocessorRomWriterForLogisim
                           )
                         );
 
-            int count = bin.Length;
+            int count = bin.Length-1;
             foreach(char ch in bin)
             {
+
                 if (ch.Equals('1'))
                 {
                     res = res + " " + count;
                 }
+
                 count--;
             }
             return res;
