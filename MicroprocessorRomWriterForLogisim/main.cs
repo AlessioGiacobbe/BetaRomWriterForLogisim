@@ -202,7 +202,9 @@ namespace MicroprocessorRomWriterForLogisim
                 {
 
                     string text = File.ReadAllText(openFileDialog1.FileName);
-                    text = text.Replace("v2.0 raw\r\n", "");
+                    text = text.Replace("v2.0 raw", "");
+                    text = text.Replace("\r", " ");
+                    text = text.Replace("\n", " ");
 
                     
                     this.istrnum = set.istrnm;
@@ -298,7 +300,10 @@ namespace MicroprocessorRomWriterForLogisim
                 int use;
                 String instructioncor = instruction.Replace(" ", "");
                 System.Diagnostics.Debug.WriteLine(instructioncor);
-                instr.Add(instructioncor);
+                if(instructioncor != "")
+                {
+                    instr.Add(instructioncor);
+                }
             }
 
             //riempo l'array e poi vado a triggerare il change della combobox
@@ -308,17 +313,25 @@ namespace MicroprocessorRomWriterForLogisim
             {
                 for(int j = 0; j <micrnum; j++)
                 {
-                    if (instr[listcont].Contains("*0"))
+                    try
                     {
-                        int jump = int.Parse(instr[listcont].Replace("*0", ""));
-                        j = j + jump - 1; // 1 viene aggiunto dal ciclo
-                    }
-                    else
-                    {
-                        ValArray[i, j] = tonumbers(instr[listcont]);
-                    }
+                        if (instr[listcont].Contains("*0"))
+                        {
+                            int jump = int.Parse(instr[listcont].Replace("*0", ""));
+                            j = j + jump - 1; // 1 viene aggiunto dal ciclo
+                        }
+                        else
+                        {
+                            ValArray[i, j] = tonumbers(instr[listcont]);
+                        }
 
-                    listcont++;
+                        listcont++;
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                    
                 }
             }
 
