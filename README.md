@@ -11,7 +11,7 @@ You have to write the number of instruction of your MicroProcessor and the maxim
 </p>
 
 Then you Can select, from the combobox on the top-left, an instruction, for example `010` will select the third instruction.
-Once selection the instruction that you want to edit, you can write on the boxes, the microistruction, writing only the bit that you want bring to `1`.
+Once selected the instruction that you want to edit, you can write on the boxes only the bit that you want bring to `1`.
 
 For example if you want to write the instruction `1010` you can simply write `3 1`.
 <p align="center">
@@ -20,7 +20,7 @@ For example if you want to write the instruction `1010` you can simply write `3 
 
 Once you have wrote your rom, you can just press the export button, select your rom name and location, and save it, it will be saved in Logisim's ROM format.
 
-On the left you can remove or add a pin, to all your micro-instruction, writing it into the box.
+On the left you can remove or add a pin, to all your micro-instructions, writing it into the box.
 
 You can also Import existing Logisim's Roms and edit these.
 
