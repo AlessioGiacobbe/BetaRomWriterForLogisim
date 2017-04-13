@@ -31,12 +31,14 @@ namespace MicroprocessorRomWriterForLogisim
             {
                 String istrName = format(tobin(i), maxnumistr);
                 comboBox1.Items.Add(new istruction(istrName));
+                comboBox2.Items.Add(new istruction(istrName));
             }
 
             ValArray = new String[istrnum, micrnum];
             
 
             comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
             currentselcted = 0;
 
             comboBox1.SelectedIndexChanged += new EventHandler(comboboxchanged);
@@ -214,11 +216,14 @@ namespace MicroprocessorRomWriterForLogisim
                     maxnummic = tobin(micrnum - 1).Length;
 
                     comboBox1.Items.Clear();
+                    comboBox2.Items.Clear();
 
                     for (int i = 0; i < istrnum; i++)
                     {
                         String istrName = format(tobin(i), maxnumistr);
                         comboBox1.Items.Add(new istruction(istrName));
+                        comboBox2.Items.Add(new istruction(istrName));
+
                     }
 
                     ValArray = new String[istrnum, micrnum];
@@ -248,6 +253,114 @@ namespace MicroprocessorRomWriterForLogisim
                 {
                     tx.Text = tx.Text.Replace(RemoveBox.Text, "");
                 }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            System.Console.WriteLine("sostituisco le istruzioni di " + comboBox2.SelectedIndex + " con " + comboBox1.SelectedIndex + " micrnum " + micrnum);
+            int toreplace = comboBox2.SelectedIndex;
+            int tobereplace = comboBox1.SelectedIndex;
+
+
+            for(int i = 0; i< micrnum; i++)
+            {
+                var temp = ValArray[toreplace, i];
+                ValArray[toreplace, i] = ValArray[tobereplace, i];
+                ValArray[tobereplace, i] = temp;
+            }
+
+            comboBox1.SelectedIndex = toreplace;
+            comboBox1.SelectedIndex = tobereplace;
+
+            MessageBox.Show("Sostituzione completata.", "Fatto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                    string text = File.ReadAllText(openFileDialog1.FileName);
+                    text = text.Replace("v2.0 raw", "");
+                    text = text.Replace("\r", " ");
+                    text = text.Replace("\n", " ");
+
+                String[,] MergeArray = new String[istrnum, micrnum];
+
+                List<String> instr = new List<string>();
+                string[] instructions = text.Split(null);
+                foreach (String instruction in instructions)
+                {
+                    String instructioncor = instruction.Replace(" ", "");
+                    System.Diagnostics.Debug.WriteLine(instructioncor);
+                    if (instructioncor != "")
+                    {
+                        instr.Add(instructioncor);
+                    }
+                }
+
+                //riempo l'array e poi vado a triggerare il change della combobox
+
+                int listcont = 0;
+                for (int i = 0; i < istrnum; i++)
+                {
+                    for (int j = 0; j < micrnum; j++)
+                    {
+                        try
+                        {
+                            if (listcont < instr.Count)
+                            {
+                                if (instr[listcont].Contains("*0"))
+                                {
+                                    int jump = int.Parse(instr[listcont].Replace("*0", ""));
+                                    j = j + jump - 1; // 1 viene aggiunto dal ciclo
+                                }
+                                else
+                                {
+                                    MergeArray[i, j] = tonumbers(instr[listcont]);
+                                }
+
+                                listcont++;
+
+                            }
+                        }
+                        catch (Exception )
+                        {
+                            Console.WriteLine("errore gestito");
+                        }
+
+                    }
+                }
+
+
+
+                Console.WriteLine("riempito array da unire in teoria");
+
+                for (int i = 0; i < istrnum; i++)
+                {
+                    for (int j = 0; j < micrnum; j++)
+                    {
+                        if(ValArray[i,j] == null)
+                        {
+                            ValArray[i, j] = MergeArray[i, j];
+                        }
+                    }
+
+                }
+
+
+                MessageBox.Show("Unione completata con successo.", "Fatto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             }
         }
 
@@ -315,27 +428,32 @@ namespace MicroprocessorRomWriterForLogisim
                 {
                     try
                     {
-                        if (instr[listcont].Contains("*0"))
+                        if(listcont < instr.Count)
                         {
-                            int jump = int.Parse(instr[listcont].Replace("*0", ""));
-                            j = j + jump - 1; // 1 viene aggiunto dal ciclo
-                        }
-                        else
-                        {
-                            ValArray[i, j] = tonumbers(instr[listcont]);
-                        }
+                            if (instr[listcont].Contains("*0"))
+                            {
+                                int jump = int.Parse(instr[listcont].Replace("*0", ""));
+                                j = j + jump - 1; // 1 viene aggiunto dal ciclo
+                            }
+                            else
+                            {
+                                ValArray[i, j] = tonumbers(instr[listcont]);
+                            }
 
-                        listcont++;
+                            listcont++;
+
+                        }
                     }
                     catch (Exception e)
                     {
-
+                        Console.WriteLine("errore gestito");
                     }
                     
                 }
             }
 
             comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
 
         }
 
