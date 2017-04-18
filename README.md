@@ -1,4 +1,4 @@
-# Microprocessor Rom Writer for Logisim
+# ß-RomWriter for Logisim
   a simple program to create Logisim's rom easly.
 
 
