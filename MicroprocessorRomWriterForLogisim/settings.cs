@@ -58,5 +58,13 @@ namespace MicroprocessorRomWriterForLogisim
             }
             
         }
+
+        private void settings_Load(object sender, EventArgs e)
+        {
+            IstrNum.Text = Properties.Settings.Default.NumIstruzioni.ToString();
+            MicroText.Text = Properties.Settings.Default.NumMicroIstruzioni.ToString();
+
+
+        }
     }
 }

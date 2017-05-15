@@ -24,12 +24,13 @@ namespace MicroprocessorRomWriterForLogisim
             this.istrnum = istrnum;
             this.micrnum = maxmic;
 
-            maxnumistr = tobin(istrnum-1).Length;
-            maxnummic = tobin(micrnum - 1).Length;
+            maxnumistr = (Properties.Settings.Default.Formato.Equals("Hex")) ? tohex(istrnum - 1).Length : tobin(istrnum-1).Length;
+            maxnummic = (Properties.Settings.Default.Formato.Equals("Hex")) ? tohex(istrnum - 1).Length : tobin(micrnum - 1).Length;
+            
 
             for(int i = 0; i<istrnum; i++)
             {
-                String istrName = format(tobin(i), maxnumistr);
+                String istrName = (Properties.Settings.Default.Formato.Equals("Hex"))? format(tohex(i), maxnumistr) : format(tobin(i), maxnumistr);
                 comboBox1.Items.Add(new istruction(istrName));
                 comboBox2.Items.Add(new istruction(istrName));
             }
@@ -220,7 +221,7 @@ namespace MicroprocessorRomWriterForLogisim
 
                     for (int i = 0; i < istrnum; i++)
                     {
-                        String istrName = format(tobin(i), maxnumistr);
+                        String istrName = (Properties.Settings.Default.Formato.Equals("Hex")) ? format(tohex(i), maxnumistr) : format(tobin(i), maxnumistr);
                         comboBox1.Items.Add(new istruction(istrName));
                         comboBox2.Items.Add(new istruction(istrName));
 
@@ -243,6 +244,12 @@ namespace MicroprocessorRomWriterForLogisim
                 }
                 
             }
+        }
+
+        public String tohex(int s)
+        {
+
+            return s.ToString("X");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -362,6 +369,12 @@ namespace MicroprocessorRomWriterForLogisim
 
 
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            preferences p = new preferences();
+            p.ShowDialog();
         }
 
         public String convertnumber(String origin)

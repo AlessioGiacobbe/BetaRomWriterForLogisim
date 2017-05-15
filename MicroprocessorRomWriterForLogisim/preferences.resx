@@ -117,27 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJ
-        TUUH4QUPDjg1yv2ocwAAAuRJREFUWEe9l8uuDUEUhvdxCxK8AInj4DFcZowJA+R4B/YMQTyDy8wtHgVD
-        DJ2ZMzPC4Ii7/2vrL2vX7t26pXMq+VLVq1b9f3Xtqu7ek75lOp2aJbFtAfQ1eaMXC/dl1BKivru94qw4
-        L84FtInRV3JHKyHKElNfFL/E96hz+5IouYNLDAbuYGvUjnkCtwVmnwXGQJvYHZFzYU6rtbgzcDI1YlvE
-        jog9FZh9izq3nwlyyGUMY7MWdcNMyR3BHnFS7I5rD94lXgvMfkSd229EPYZrtNDkulBKCnrprgsE18Qt
-        cUCwydYF8Z9RZxwjh1zG3BRoEL8hssecOUtGvSI+iizKb+xlbjM37iPX+8IxNA+L7DUzATYK9WPBADYX
-        S2tj2l5qRIlnbJTziNP2KXkisldZBQeOCxtQm3yNYN0PxGzs67qfGo/G0+aZF4Ikz7jGBh/EXcEzAWgT
-        yzk11nwp7LeUzeGRcHJ9BxbmFBwUjUBAe1m0nRBAyxPAo3jmVbDQFWHzumYjHRHkbRfsaKBN7Kj4JNrG
-        Mqmronhlc+Mjckp8FRZgM9G+L+j3Qynj2ANBbt6YXwSa9JdjCKUReBX2ifeinsCqoH9GpIqRU08ArZkX
-        lSmNYIwJXBb/PQGLnBab8xOkfeCZsVE8sK7ZYGw08oZuQup/bsK+x5AjZyFPnBgvo5xr0PIxfCiKZ2kE
-        Qx5E94QfRLT9/qjNjTWfi+LpVfCj+Jggqb77fI1B3Q/EsvkiDTwaT5ubzXgZ+Sn492Xkhuh6HW8IxHKs
-        DfeRy5gc42c7JLJXswieAPiIXBMMeiv4qNgvzog+HyTvBLn1Bwma2eOPOcWBRNcn2SuBoJc5t+nbKfIY
-        NE6IxZ9klKrTg6mZMUvmB03XR6k/OMhlDGOzFnVDa0kJJLNR8iAvXddnOd+PORfmtAaXGGjRrj8mF0TJ
-        Ha2EqO+A35JN5r9lhph/5yZ31BLCvRm9JHHujiVuY+DvPJn8BgPJBKLbvADHAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

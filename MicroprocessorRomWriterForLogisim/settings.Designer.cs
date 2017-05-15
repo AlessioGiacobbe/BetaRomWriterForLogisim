@@ -89,6 +89,7 @@
             this.Controls.Add(this.IstrNum);
             this.Name = "settings";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
