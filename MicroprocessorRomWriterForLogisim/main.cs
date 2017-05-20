@@ -213,8 +213,10 @@ namespace MicroprocessorRomWriterForLogisim
                     this.istrnum = set.istrnm;
                     this.micrnum = set.micronm;
 
-                    maxnumistr = tobin(istrnum - 1).Length;
-                    maxnummic = tobin(micrnum - 1).Length;
+                    maxnumistr = (Properties.Settings.Default.Formato.Equals("Hex")) ? tohex(istrnum - 1).Length : tobin(istrnum - 1).Length;
+                    maxnummic = (Properties.Settings.Default.Formato.Equals("Hex")) ? tohex(istrnum - 1).Length : tobin(micrnum - 1).Length;
+
+
 
                     comboBox1.Items.Clear();
                     comboBox2.Items.Clear();
