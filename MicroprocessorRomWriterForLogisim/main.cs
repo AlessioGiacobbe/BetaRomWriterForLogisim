@@ -187,6 +187,30 @@ namespace MicroprocessorRomWriterForLogisim
                 }
             }
         }
+
+        public string analyze(string text)
+        {
+            String rtn = "";
+            foreach (String tx in text.Split(null))
+            {
+                if (tx.Contains("*"))
+                {
+
+                    var tmp = tx.Replace("*0", "");
+                    for (int i = 0; i< int.Parse(tmp); i++)
+                    {
+                        rtn = rtn + "0" + " ";
+
+                    }
+
+                }
+                else
+                {
+                    rtn = rtn + tx + " ";
+                }
+            }
+            return rtn;
+        }
         
         private void Import_rom(object sender, EventArgs e)
         {
@@ -209,7 +233,11 @@ namespace MicroprocessorRomWriterForLogisim
                     text = text.Replace("\r", " ");
                     text = text.Replace("\n", " ");
 
-                    
+
+                    text = analyze(text);
+
+
+
                     this.istrnum = set.istrnm;
                     this.micrnum = set.micronm;
 
