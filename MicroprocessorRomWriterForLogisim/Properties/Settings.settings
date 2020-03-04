@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="NumIstruzioni" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">255</Value>
+      <Value Profile="(Default)">256</Value>
     </Setting>
     <Setting Name="NumMicroIstruzioni" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">16</Value>
