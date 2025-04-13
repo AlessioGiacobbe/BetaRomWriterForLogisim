@@ -9,7 +9,7 @@ namespace MicroprocessorRomWriterForLogisim
     public class istruction
     {
         String nome;
-        int val;
+      
 
         public istruction(String name)
         {

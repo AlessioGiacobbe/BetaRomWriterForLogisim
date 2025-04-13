@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroprocessorRomWriterForLogisim", "MicroprocessorRomWriterForLogisim\MicroprocessorRomWriterForLogisim.csproj", "{B5091ED5-6FC6-4945-8182-B44C614DC80C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroprocessorRomWriterForLogisimFinito", "MicroprocessorRomWriterForLogisim\MicroprocessorRomWriterForLogisimFinito.csproj", "{B5091ED5-6FC6-4945-8182-B44C614DC80C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

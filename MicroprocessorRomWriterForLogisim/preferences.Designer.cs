@@ -131,7 +131,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
-            this.button2.Text = "annulla";
+            this.button2.Text = "Annulla";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.annulla);
             // 
@@ -141,8 +141,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(275, 174);
             this.Controls.Add(this.groupBox1);
-            this.Name = "preferences";
-            this.Text = "preferences";
+            this.Name = "Preferences";
+            this.Text = "Preferences";
             this.Load += new System.EventHandler(this.preferences_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -16,7 +16,7 @@ namespace MicroprocessorRomWriterForLogisim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new settings());
+            Application.Run(new main(256, 16));
         }
     }
 }
