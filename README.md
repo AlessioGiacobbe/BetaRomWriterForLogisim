@@ -1,5 +1,5 @@
 # ß-RomWriter for Logisim
-  a simple program to create Logisim's rom easly.
+  a simple program to create Logisim's rom easily.
 
 
 You can download the precompiled version [here](https://github.com/AlessioGiacobbe/MicroprocessorRomWriterForLogisim/blob/master/MicroprocessorRomWriterForLogisim/precompiled/MicroprocessorRomWriterForLogisim.exe) or download the project and compile it using Visual Studio.
